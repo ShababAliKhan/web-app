@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Task 2</title>
+</head>
+
+<body>
+    <div id="task-bar">
+        <a href="{{ url_for('home') }}" class="task">Task 1</a>
+        <a href="{{ url_for('task2') }}" class="task">Task 2</a>
+        <a href="{{ url_for('task3') }}" class="task">Task 3</a>
+    </div>
+
+
+    <div class="table-container">
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    {% for column in columns %}
+                    <th>{{ column }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in rows %}
+                <tr>
+                    {% for item in row %}
+                    <td>{{ item }}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="info-container">
+        <div class="info" id="info1">Name : Shabab Ali Khan</div>
+        <div class="info" id="info1">Email : shababalik@maqsoftware.com</div>
+        <div class="info" id="info2">Phone : +91 9931338383</div>
+        <div class="info" id="info2">Employee Id : EMPN1078</div>
+    </div>
+</body>
+
+</html>

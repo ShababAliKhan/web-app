@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Assignment 1</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
+</head>
+
+<body>
+    <div id="task-bar">
+        <a href="{{ url_for('home') }}" class="task">Task 1</a>
+        <a href="{{ url_for('task2') }}" class="task">Task 2</a>
+        <a href="{{ url_for('task3') }}" class="task">Task 3</a>
+    </div>
+
+    <div id="image-carousel">
+        <a href="{{ url_for('carousel', image_index=(index - 1) % 3) }}" class="carousel-arrow" id="left-arrow">←</a>
+        <div class="carousel-content">
+            <img src="{{ url_for('static', filename=image) }}" class="carousel-image" id="carousel-image">
+        </div>
+        <a href="{{ url_for('carousel', image_index=(index + 1) % 3) }}" class="carousel-arrow" id="right-arrow">→</a>
+    </div>
+
+
+    <div class="info-container">
+        <div class="info" id="info1">Name : Shabab Ali Khan</div>
+        <div class="info" id="info1">Email : shababalik@maqsoftware.com</div>
+        <div class="info" id="info2">Phone : +91 9931338383</div>
+        <div class="info" id="info2">Employee Id : EMPN1078</div>
+    </div>
+</body>
+
+</html>
+
+
